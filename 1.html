@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>first page</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+  	<link rel="stylesheet" href="https://static.jstree.com/3.3.16/assets/dist/themes/default/style.min.css" />
+
+	<script src="https://static.jstree.com/3.3.16/assets/jquery-1.10.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://static.jstree.com/3.3.16/assets/dist/jstree.min.js"></script>
+	<style type="text/css">
+		body {
+			background-color: grey;
+		}
+
+		.container {
+			background-color: white;
+		}
+
+		.card {
+			border: 1px solid #008cff;
+		}
+
+		header .btn-group-md button {
+			width:150px;
+			height:60px;
+		}
+
+		section {
+			padding: 10px 15px; 
+			border: 1px solid #008cff;
+		}
+
+		footer i {
+			margin-left: 10px;
+		}
+
+		.section-left {
+			overflow: scroll;
+			height: 98vh;
+		}
+
+		.btn-section-right {
+			border-radius: unset;
+		}
+
+		.email-bar {
+			margin: auto; 70px;
+		}
+
+		.camera-section {
+			width: 200px;
+		 	height: 200px; 
+		 	float: right; 
+		 	border: 1px solid #008cff;
+		}
+
+		.camera-section span {
+			margin: auto;
+		}
+
+		.footer-right {
+			text-align: right;
+		}
+
+		.card-body{
+			padding: 10px;
+		}
+
+		.input-box {
+			height: 90%;
+			font-size: 10pt;
+		}
+
+		.form-select {
+			padding: 0;
+			padding-left: 10px;
+		}
+
+		@media screen and (max-width: 992px) {
+			.footer-left, .footer-right {
+				text-align: center;
+			}
+		}
+
+		/*this is the part of tree view*/
+		.treeview .list-group-item {
+            cursor: pointer
+        }
+
+        .treeview span.indent {
+            margin-left: 10px;
+            margin-right: 10px
+        }
+
+        .treeview span.icon {
+            width: 12px;
+            margin-right: 5px
+        }
+
+        .treeview .node-disabled {
+            color: silver;
+            cursor: not-allowed
+        }
+
+        .node-treeview1 {
+        }
+
+        .node-treeview1:not(.node-disabled):hover {
+                background-color: #F5F5F5;
+        }
+
+        /*custom*/
+        .node-selected{
+        	background-color:#0d6efd !important;
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="btn-group-md pt-2 pb-2">
+			  	<button type="button" class="btn btn-outline-primary"><i class="fa fa-building-o" aria-hidden="true"></i> <br/>Enterprise</button>
+			  	<button type="button" class="btn btn-outline-primary"><i class="fa fa-user-plus" aria-hidden="true"></i> <br/>Employ</button>
+			  	<button type="button" class="btn btn-outline-primary"><i class="fa fa-window-restore" aria-hidden="true"></i> <br/>Departments</button>
+			  	<button type="button"class="btn btn-outline-primary"><i class="fa fa-user-o" aria-hidden="true"></i> <br/>Position</button>
+			</div>
+		</header>
+		<section>
+			<div class="row">
+			    <div class="col-lg-3 section-left">
+			    	<div class="input-group">
+					    <span class="input-group-text">@</span>
+					    <input type="text" class="form-control" placeholder="Username">
+				  	</div>
+					<div id="jstree">
+					    <ul>
+					      <li>Root node 1
+					        <ul>
+					          <li id="child_node_1">Child node 1</li>
+					          <li>Child node 2</li>
+					        </ul>
+					      </li>
+					      <li>Root node 2</li>
+					    </ul>
+				  	</div>
+			    </div>
+			    <div class="col-lg-9">
+					<div class="btn-group-md">
+					  	<button type="button" class="btn btn-outline-primary btn-section-right" ><i class="fa fa-plus" aria-hidden="true"></i> Ajouter</button>
+					  	<button type="button" class="btn btn-outline-primary btn-section-right" ><i class="fa fa-floppy-o" aria-hidden="true"></i> Sauvegarder</button>
+					  	<button type="button" class="btn btn-outline-primary btn-section-right" ><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
+					  	<button type="button" class="btn btn-outline-primary btn-section-right" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Importer</button>
+					  	<button type="button" class="btn btn-outline-primary btn-section-right" ><i class="fa fa-arrow-right" aria-hidden="true"></i> Exporter</button>
+					</div>
+					<ul class="nav nav-tabs mt-2">
+						<li class="nav-item">
+						  	<a class="nav-link active" href="#">Parametre General</a>
+						</li>
+						<li class="nav-item">
+						  	<a class="nav-link" href="#">Autres</a>
+						</li>
+						<li class="nav-item">
+						  	<a class="nav-link" href="#">Pay Details</a>
+						</li>
+					</ul>
+					<div class="card">
+					    <div class="card-body">
+					    	<div class="row">
+					    		<div class="col-lg-5">
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span >Status</span>
+				    					</div>
+				    					<div class="col-lg-7">
+				    						<label class="form-check-label">
+									        	<input class="form-check-input" type="checkbox" name="remember" checked> Remember me
+									      </label>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span>ID Emp.</span>
+				    					</div>
+				    					<div class="col-lg-7">
+											<input type="email" class="form-control input-box" placeholder="1" name="email">
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span>Prenom</span>
+				    					</div>
+				    					<div class="col-lg-7">
+											<input type="email" class="form-control input-box" placeholder="Junivelle" name="email">
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span>Nom</span>
+				    					</div>
+				    					<div class="col-lg-7">
+											<input type="email" class="form-control input-box" placeholder="" name="email">
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span>Department</span>
+				    					</div>
+				    					<div class="col-lg-7">
+											<select class="form-select input-box" name="sellist1">
+										      	<option>DPRI</option>
+										      	<option>2</option>
+									      		<option>3</option>
+										      	<option>4</option>
+										    </select>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span >Date Recru</span>
+				    					</div>
+				    					<div class="col-lg-7">
+				    						<select class="form-select input-box" name="sellist1">
+										      	<option>01/01/1970</option>
+									      		<option>2</option>
+										      	<option>3</option>
+										      	<option>4</option>
+										    </select>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span >Contrat Type</span>
+				    					</div>
+				    					<div class="col-lg-7">
+				    						<select class="form-select input-box" name="sellist1">
+										      	<option>CDI</option>
+										      	<option>2</option>
+										      	<option>3</option>
+										      	<option>4</option>
+										    </select>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span >Zone Terminal</span>
+				    					</div>
+				    					<div class="col-lg-7">
+				    						<select class="form-select input-box" name="sellist1">
+										      	<option>DRL</option>
+										      	<option>2</option>
+										      	<option>3</option>
+										      	<option>4</option>
+										    </select>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span>Privilege</span>
+				    					</div>
+				    					<div class="col-lg-7">
+				    						<select class="form-select input-box" name="sellist1">
+										      	<option>Administrator</option>
+										      	<option>2</option>
+										      	<option>3</option>
+										      	<option>4</option>
+										    </select>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-5">
+				    						<span>Position</span>
+				    					</div>
+				    					<div class="col-lg-7">
+				    						<select class="form-select input-box" name="sellist1">
+										      	<option>Staff</option>
+										      	<option>2</option>
+										      	<option>3</option>
+										      	<option>4</option>
+										    </select>
+				    					</div>
+				    				</div>
+					    		</div>
+					    		<div class="col-lg-7">
+					    			<div class="row">
+					    				<span class="text-center">Dim.(200X200)</span>
+					    			</div>
+					    			<div class="row mt-2">
+					    				<div class="col-lg-2"></div>
+					    				<div class="col-lg-6">
+					    					<div class="card camera-section">
+							    				<span>Aucune donness d'image</span>
+							    			</div>
+					    				</div>
+					    				<div class="col-lg-4">
+					    					<div>
+					    						<i class="fa fa-folder-open-o" aria-hidden="true"></i>
+					    					</div>
+					    					<div>
+					    						<i class="fa fa-trash-o" aria-hidden="true"></i>
+					    					</div>
+					    					<div>
+					    						<i class="fa fa-camera" aria-hidden="true"></i>
+					    					</div>
+					    				</div>
+					    			</div>
+					    			<div class="row mt-3 email-bar">
+				    					<div class="col-lg-5">
+				    						<span >Adresse Email</span>
+				    					</div>
+				    					<div class="col-lg-7">
+											<input type="email" class="form-control input-box" placeholder="" name="email">
+				    					</div>
+				    				</div>
+					    		</div>
+					    	</div>
+					    </div>
+				  	</div>
+					<div class="card mt-2">
+					    <div class="card-body">
+					    	<div class="row">
+					    		<div class="col-lg-6">
+				    				<div class="row mb-2">
+				    					<div class="col-lg-4">
+				    						<span >Mots de passe</span>
+				    					</div>
+				    					<div class="col-lg-8">
+											<input type="email" class="form-control input-box" placeholder="****" name="email">
+				    					</div>
+				    				</div>
+				    				<div class="row mb-2">
+				    					<div class="col-lg-4">
+				    						<span >Nbre Emp.</span>
+				    					</div>
+				    					<div class="col-lg-8">
+				    						<span >0</span>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-3">
+				    					<div class="col-lg-4">
+				    						<span >Paumes</span>
+				    					</div>
+				    					<div class="col-lg-8">
+				    						<span >0</span>
+				    					</div>
+				    				</div>
+					    		</div>
+					    		<div class="col-lg-6">
+				    				<div class="row mb-3">
+				    					<div class="col-lg-4">
+				    						<span >N*Carte</span>
+				    					</div>
+				    					<div class="col-lg-8">
+											<input type="email" class="form-control input-box" placeholder="7749286" name="email">
+				    					</div>
+				    				</div>
+				    				<div class="row mb-3">
+				    					<div class="col-lg-4">
+				    						<span>Nbre Face</span>
+				    					</div>
+				    					<div class="col-lg-8">
+				    						<span>0</span>
+				    					</div>
+				    				</div>
+				    				<div class="row mb-3">
+				    					<div class="col-lg-4">
+				    						<span>Finger Vein</span>
+				    					</div>
+				    					<div class="col-lg-8">
+				    						<span>0</span>
+				    					</div>
+				    				</div>
+					    		</div>
+					    	</div>
+					    </div>
+				  	</div>
+			    </div>
+		  	</div>
+		</section>
+	  	<footer>
+	  		<div class="row p-2">
+	  			<div class="col-lg-4 footer-left">
+	  				Ptgs: 300
+	  			</div>
+	  			<div class="col-lg-4 text-center">
+					<i class="fa fa-id-card-o" aria-hidden="true"></i>
+					<i class="fa fa-object-group" aria-hidden="true"></i>
+					<i class="fa fa-clone" aria-hidden="true"></i>
+					<i class="fa fa-adjust" aria-hidden="true"></i>
+	  			</div>
+	  			<div class="col-lg-4 footer-right">
+	  				Login utillsateur:admin
+	  			</div>
+	  		</div>
+	  	</footer>
+	</div>
+</body>
+<script>
+  $(function () {
+    $('#jstree').jstree();
+  });
+</script>
+</html>
